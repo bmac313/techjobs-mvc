@@ -10,7 +10,31 @@
 
     <h1 th:text="${#strings.capitalizeWords(title)}"></h1>
 
-    <!-- TODO #3 - Use the same list display from search.html -->
+    <div class="jobs-list">
+        <div th:each="job : ${jobs}">
+            <h3 th:text="${job.get('name')}"></h3>
+            <table class="job-listing">
+                <tbody>
+                <tr>
+                    <td>Position Type</td>
+                    <td th:text="${job.get('position type')}"></td>
+                </tr>
+                <tr>
+                    <td>Employer</td>
+                    <td th:text="${job.get('employer')}"></td>
+                </tr>
+                <tr>
+                    <td>Location</td>
+                    <td th:text="${job.get('location')}"></td>
+                </tr>
+                <tr>
+                    <td>Skill</td>
+                    <td th:text="${job.get('core competency')}"></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
 
 </div>
 
